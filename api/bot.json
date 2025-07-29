@@ -1,7 +1,7 @@
 import { Telegraf } from 'telegraf';
 import signalGenerator from '../utils/signalGenerator.js';
 
-const bot = new Telegraf('7892065831:AAFJbf6AF2qXkzIrw-zij8xbzj8eBQCnGIA'); // Your Telegram Bot Token
+const bot = new Telegraf('7982769821:AAHLDqgaz4_copQLRrObb26ahVtBqSKu0LA'); // Your Telegram Bot Token
 
 bot.start((ctx) => {
   ctx.reply('👋 Welcome to Victorex Bot!\n\nUse /signal to get a live market signal.');
