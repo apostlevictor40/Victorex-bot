@@ -1,0 +1,26 @@
+import { Telegraf } from 'telegraf';
+import signalGenerator from '../utils/signalGenerator.js';
+
+const bot = new Telegraf('7892065831:AAFJbf6AF2qXkzIrw-zij8xbzj8eBQCnGIA'); // Your Telegram Bot Token
+
+bot.start((ctx) => {
+  ctx.reply('👋 Welcome to Victorex Bot!\n\nUse /signal to get a live market signal.');
+});
+
+bot.command('signal', async (ctx) => {
+  const signal = await signalGenerator('5c75c9e045b44511b29e2ca8852e8b36'); // Your Twelve Data API key
+  ctx.reply(`📈 Signal:\nAsset: ${signal.asset}\nDirection: ${signal.direction}\nTimeframe: ${signal.timeframe}`);
+});
+
+export default async function handler(req, res) {
+  if (req.method === 'POST') {
+    try {
+      await bot.handleUpdate(req.body);
+    } catch (err) {
+      console.error('Error handling update:', err);
+    }
+    return res.status(200).send('OK');
+  }
+
+  res.status(200).send('Victorex Bot is running...');
+}
