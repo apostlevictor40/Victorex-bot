@@ -2,7 +2,7 @@ const { Telegraf, Markup } = require('telegraf');
 const axios = require('axios');
 const { generateSignal } = require('../utils/signalGenerator');
 
-const bot = new Telegraf('7892065831:AAFJbf6AF2qXkzIrw-zij8xbzj8eBQCnGIA');
+const bot = new Telegraf('7982769821:AAHLDqgaz4_copQLRrObb26ahVtBqSKu0LA');
 
 const assets = [
   "AED/CNY OTC", "AUD/CAD OTC", "CAD/JPY OTC", "EUR/GBP OTC", "KES/USD OTC", "LBP/USD OTC",
